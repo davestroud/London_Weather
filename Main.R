@@ -23,3 +23,11 @@ lines(xfit, yfit, col= "#5694f1", lwd = 2)
 
 # plot the kernal density
 plot(density(londontmp$y))
+
+londontmp$year <- substr(londontmp$ds, 1, 4) # extract first four characters
+londontmp$decade <- ifelse(londontmp$year < 1970, "60s",
+                           ifelse(londontmp$year < 1980, "70s",
+                                  ifelse(londontmp$year < 1990, "80s",
+                                         ifelse(londontmp$year < 2000, "90s",
+                                                ifelse(londontmp$year < 2010, "00s", "10s")))))
+
