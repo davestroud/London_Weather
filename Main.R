@@ -20,3 +20,6 @@ yfit <- dnorm(xfit, mean = mean(londontmp$y), sd=
                 sd(londontmp$y))
 yfit <- yfit * diff(h$mids[1:2]) * length(londontmp$y)
 lines(xfit, yfit, col= "#5694f1", lwd = 2)
+
+# plot the kernal density
+plot(density(londontmp$y))
