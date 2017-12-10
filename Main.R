@@ -31,3 +31,7 @@ londontmp$decade <- ifelse(londontmp$year < 1970, "60s",
                                          ifelse(londontmp$year < 2000, "90s",
                                                 ifelse(londontmp$year < 2010, "00s", "10s")))))
 
+londontmp$decade <- as.factor(londontmp$decade)
+londontmp$decade <- factor(londontmp$decade,
+                           levels(londontmp$decade) [c(3:6, 1:2)]) #correct order
+                           
