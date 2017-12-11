@@ -45,3 +45,10 @@ sm.density.compare(x = londontmp$y,
 title(main = "Distributions by Decade")
 legend("topright", levels(londontmp$decade),
        fill = colfill, bty = "n")
+
+
+library(psych)
+describe.by(londontmp[, 2], londontmp$decade)
+
+
+
