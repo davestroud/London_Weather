@@ -56,8 +56,7 @@ library(prophet)
 set.seed(1895) # in casee you pass mcmc.samples below
 m <- prophet(londontmp, daily.seasonality = FALSE)
 
-
-
-
+future <- make_future_dataframe(m, periods = 362 * 2, include_history = FALSE)
+head(future)
 
 
