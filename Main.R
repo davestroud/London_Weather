@@ -3,6 +3,7 @@ dim(londontmp)
 londontmp <- londontmp[, 2:3] #subset date and measurement
 class(londontmp$DATE)
 
+# Lubricate package is used to correctly format the dates
 library(lubridate)
 Sys.setenv(TZ = "Europe/London") #only for locals!
 londontmp[, 1] <- ymd(londontmp[, 1], locale = Sys.getlocale("LC_TIME")) #locale can be skipped
@@ -51,4 +52,5 @@ library(psych)
 describe.by(londontmp[, 2], londontmp$decade)
 
 
-
+library(prophet)
+set.seed(1895) # in casee you pass mcmc.samples below
