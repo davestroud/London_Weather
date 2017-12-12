@@ -54,3 +54,10 @@ describe.by(londontmp[, 2], londontmp$decade)
 
 library(prophet)
 set.seed(1895) # in casee you pass mcmc.samples below
+m <- prophet(londontmp, daily.seasonality = FALSE)
+
+
+
+
+
+
