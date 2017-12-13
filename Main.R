@@ -59,4 +59,5 @@ m <- prophet(londontmp, daily.seasonality = FALSE)
 future <- make_future_dataframe(m, periods = 362 * 2, include_history = FALSE)
 head(future)
 
-
+forecast <- predict(m, future)
+head(forecast)
