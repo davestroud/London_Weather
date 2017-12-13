@@ -61,3 +61,5 @@ head(future)
 
 forecast <- predict(m, future)
 head(forecast)
+
+plot(m, forecast)
