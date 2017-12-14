@@ -65,3 +65,6 @@ head(forecast)
 plot(m, forecast)
 
 prophet_plot_components(m, forecast)
+
+df.cv <- cross_validation(m, initial = 365 * 50, 
+                          horizon = 365 * 2, units = "days")
