@@ -53,7 +53,7 @@ describe.by(londontmp[, 2], londontmp$decade)
 
 
 library(prophet)
-set.seed(1895) # in casee you pass mcmc.samples below
+set.seed(1895) # in case you pass mcmc.samples below
 m <- prophet(londontmp, daily.seasonality = FALSE)
 
 future <- make_future_dataframe(m, periods = 362 * 2, include_history = FALSE)
@@ -63,3 +63,5 @@ forecast <- predict(m, future)
 head(forecast)
 
 plot(m, forecast)
+
+prophet_plot_components(m, forecast)
